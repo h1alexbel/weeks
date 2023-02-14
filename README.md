@@ -1,4 +1,4 @@
-<img src="logo.jpeg" alt="drawing" style="width:75px;"/>
+<img src="logo.svg" alt="drawing" style="width:75px;"/>
 
 [![DevOps By Rultor.com](https://www.rultor.com/b/yegor256/rultor)](https://www.rultor.com/p/yegor256/rultor)
 [![We recommend IntelliJ IDEA](https://www.elegantobjects.org/intellij-idea.svg)](https://www.jetbrains.com/idea/)
@@ -11,6 +11,9 @@
 [![Hits-of-Code](https://hitsofcode.com/github/h1alexbel/weeks)](https://hitsofcode.com/view/github/h1alexbel/weeks)
 
 Weeks is a Web Service that helps to plan things counting risks.
+
+Read [this blogpost](https://www.yegor256.com/2021/09/09/simba.html) by [@yegor256](https://github.com/yegor256) about
+Simplified Management By Artifacts (SIMBA).
 
 # Prerequisites
 
