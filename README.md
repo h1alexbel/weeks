@@ -26,5 +26,5 @@ $ sh up.sh
 
 # Want to contribute?
 
-Don't be shy. Just submit an [issue](https://github.com/h1alexbel/mbook/issues) or open
-a [pull request](https://github.com/h1alexbel/mbook/pulls).
+Don't be shy. Just submit an [issue](https://github.com/h1alexbel/weeks/issues) or open
+a [pull request](https://github.com/h1alexbel/weeks/pulls).
