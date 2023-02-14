@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: weeks
+  r2dbc:
+    url: r2dbc:postgresql://${DB_HOST}:5432/postgres
+    username: ${PG_USERNAME}
+    password: ${PG_PASSWORD}
+  liquibase:
+    url: jdbc:postgresql://${DB_HOST}:5432/postgres
+    user: ${PG_USERNAME}
+    password: ${PG_PASSWORD}
+server:
+  shutdown: graceful
+logging:
+  level:
+    com.h1alexbel.weeks: ${DOMAIN_LOG_LEVEL}
+    web: ${WEB_LOG_LEVEL}
+    org.springframework.r2dbc: ${R2DBC_LOG_LEVEL}
+  file:
+    path: /
+    name: weeks.log
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
