@@ -18,7 +18,7 @@ You need to have [```Docker```](https://www.docker.com), ```Java 17+```, and ```
 
 # Quick Start
 
-Run this script to start 3 containers: Application and [PostgreSQL](https://www.postgresql.org).
+Run this script to start these containers: Application and [PostgreSQL](https://www.postgresql.org).
 
 ```shell
 $ sh up.sh
@@ -26,5 +26,5 @@ $ sh up.sh
 
 # Want to contribute?
 
-Don't be shy. Just submit an [issue](https://github.com/h1alexbel/mbook/issues) or open
-a [pull request](https://github.com/h1alexbel/mbook/pulls).
+Don't be shy. Just submit an [issue](https://github.com/h1alexbel/weeks/issues) or open
+a [pull request](https://github.com/h1alexbel/weeks/pulls).
