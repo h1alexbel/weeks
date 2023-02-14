@@ -15,4 +15,10 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: |
+          R2DBC_LOG_LEVEL=DEBUG
+          DOMAIN_LOG_LEVEL=DEBUG
+          WEB_LOG_LEVEL=DEBUG
+          PG_HOST=localhost
+          PG_USERNAME=user
+          PG_PASSWORD=password
           mvn clean test
