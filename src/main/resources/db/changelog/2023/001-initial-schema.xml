@@ -24,26 +24,25 @@ SOFTWARE.
                    logicalFilePath="001-initial-schema.xml">
   <changeSet id="001" author="h1alexbel">
     <sql>
-      CREATE TABLE user
-      (
+      CREATE TABLE IF NOT EXISTS login (
         id       BIGSERIAL PRIMARY KEY,
-        login    CHARACTER VARYING(64) UNIQUE NOT NULL,
+        name    CHARACTER VARYING(64) UNIQUE NOT NULL,
         password CHARACTER VARYING(128)       NOT NULL
       );
     </sql>
     <sql>
-      CREATE TABLE week
+      CREATE TABLE IF NOT EXISTS week
       (
         id    BIGSERIAL PRIMARY KEY,
         title CHARACTER VARYING(128)    NOT NULL,
-        to    CHARACTER VARYING(64)     NOT NULL,
+        mail  CHARACTER VARYING(64)     NOT NULL,
         created
               TIMESTAMPTZ DEFAULT now() NOT NULL,
-        user  BIGINT REFERENCES user (id)
+        login BIGINT REFERENCES login (id)
       );
     </sql>
     <sql>
-      CREATE TABLE requirement
+      CREATE TABLE IF NOT EXISTS requirement
       (
         id   BIGSERIAL PRIMARY KEY,
         name CHARACTER VARYING(64) NOT NULL,
@@ -51,7 +50,7 @@ SOFTWARE.
       );
     </sql>
     <sql>
-      CREATE TABLE cc
+      CREATE TABLE IF NOT EXISTS cc
       (
         id          BIGSERIAL PRIMARY KEY,
         coordinates CHARACTER VARYING(64) NOT NULL,
