@@ -5,7 +5,6 @@ import com.h1alexbel.weeks.model.Users;
 import lombok.RequiredArgsConstructor;
 import org.springframework.r2dbc.core.DatabaseClient;
 import org.springframework.stereotype.Component;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
@@ -30,10 +29,5 @@ public class PgUsers implements Users {
           (String) rows.get("name")
         )
       );
-  }
-
-  @Override
-  public Flux<User> flux() {
-    return null;
   }
 }

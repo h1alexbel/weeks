@@ -1,6 +1,5 @@
 package com.h1alexbel.weeks.model;
 
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
@@ -10,6 +9,4 @@ import reactor.core.publisher.Mono;
 public interface Users {
 
   Mono<User> mono(Long id);
-
-  Flux<User> flux();
 }
