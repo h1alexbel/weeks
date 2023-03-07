@@ -1,4 +1,4 @@
-name: Java Maven Docker CI/CD
+name: mvn + docker
 on:
   push:
     branches: [ master ]
