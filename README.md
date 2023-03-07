@@ -18,7 +18,7 @@ Simplified Management By Artifacts (SIMBA).
 
 # Quick Start
 
-Run this script to start these containers: Weeks-API and [PostgreSQL](https://www.postgresql.org).
+Run this script to start these containers: Weeks-API and [PostgreSQL](https://www.postgresql.org) locally.
 
 ```shell
 $ sh up.sh
