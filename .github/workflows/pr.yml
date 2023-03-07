@@ -21,4 +21,4 @@ jobs:
           PG_HOST=localhost
           PG_USERNAME=user
           PG_PASSWORD=password
-          mvn clean test
+          mvn clean install
