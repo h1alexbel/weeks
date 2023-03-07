@@ -20,17 +20,18 @@ public class PgWeeks implements Weeks {
 
   @Override
   public Mono<Week> mono(final Long id) {
-    String sql = """
-      SELECT
-      w.id AS id,
-      w.title AS title,
-      w.mail AS mail,
-      l.name AS login
-      FROM week w
-      JOIN login l on l.id = w.login
-      WHERE w.id = :id
-      """;
-    return this.db.sql(sql)
+    return this.db.sql(
+        """
+          SELECT
+          w.id AS id,
+          w.title AS title,
+          w.mail AS mail,
+          l.name AS login
+          FROM week w
+          JOIN login l on l.id = w.login
+          WHERE w.id = :id  
+          """
+      )
       .bind("id", id)
       .fetch()
       .one()
@@ -46,17 +47,18 @@ public class PgWeeks implements Weeks {
 
   @Override
   public Flux<Week> flux(final String login) {
-    String sql = """
-      SELECT
-      w.id AS id,
-      w.title AS title,
-      w.mail AS mail,
-      l.name AS login
-      FROM week w
-      JOIN login l on l.id = w.login
-      WHERE l.name = :login    
-      """;
-    return this.db.sql(sql)
+    return this.db.sql(
+        """
+          SELECT
+          w.id AS id,
+          w.title AS title,
+          w.mail AS mail,
+          l.name AS login
+          FROM week w
+          JOIN login l on l.id = w.login
+          WHERE l.name = :login 
+          """
+      )
       .bind("login", login)
       .fetch()
       .all()

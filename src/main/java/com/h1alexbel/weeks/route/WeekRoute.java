@@ -40,4 +40,27 @@ public class WeekRoute {
           )
       ).build();
   }
+
+  @Bean
+  public RouterFunction<ServerResponse> all() {
+    return RouterFunctions.route()
+      .GET("/weeks/user/@{username}", request ->
+        ServerResponse.ok()
+          .body(
+            this.weeks.flux(
+                request.pathVariable("username")
+              )
+              .flatMap(
+                week -> Mono.just(
+                  new VwWeek(
+                    week.title(),
+                    week.mail(),
+                    week.username()
+                  )
+                )
+              ),
+            VwWeek.class
+          )
+      ).build();
+  }
 }
