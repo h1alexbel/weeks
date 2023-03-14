@@ -1,7 +1,7 @@
 package com.h1alexbel.weeks.route;
 
 import com.h1alexbel.weeks.model.Users;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
@@ -14,10 +14,13 @@ import reactor.core.publisher.Mono;
  * @since 1.0
  */
 @Configuration
-@RequiredArgsConstructor
 public class UserRoute {
 
   private final Users users;
+
+  public UserRoute(@Qualifier("cdUsers") final Users users) {
+    this.users = users;
+  }
 
   @Bean
   public RouterFunction<ServerResponse> user() {

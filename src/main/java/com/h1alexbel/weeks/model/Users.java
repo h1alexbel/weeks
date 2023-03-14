@@ -1,5 +1,6 @@
 package com.h1alexbel.weeks.model;
 
+import com.h1alexbel.weeks.postgres.PgUser;
 import reactor.core.publisher.Mono;
 
 /**
@@ -8,5 +9,5 @@ import reactor.core.publisher.Mono;
  */
 public interface Users {
 
-  Mono<User> mono(Long id);
+  Mono<? extends PgUser> mono(Long id);
 }

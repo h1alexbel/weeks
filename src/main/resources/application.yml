@@ -10,6 +10,11 @@ spring:
     user: ${PG_USERNAME}
     password: ${PG_PASSWORD}
     driver-class-name: org.postgresql.Driver
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: 6379
+      password: ${REDIS_PASSWORD}
 server:
   shutdown: graceful
 logging:

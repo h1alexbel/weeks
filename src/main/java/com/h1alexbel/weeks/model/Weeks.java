@@ -9,6 +9,8 @@ import reactor.core.publisher.Mono;
  */
 public interface Weeks {
 
+  Mono<Void> create(Week week);
+
   Mono<Week> mono(Long id);
 
   Flux<Week> flux(String username);

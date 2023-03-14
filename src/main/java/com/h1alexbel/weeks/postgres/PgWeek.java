@@ -15,6 +15,13 @@ public final class PgWeek implements Week {
   private final String mail;
   private final String username;
 
+  public PgWeek(final String title, final String mail) {
+    this.id = null;
+    this.title = title;
+    this.mail = mail;
+    this.username = null;
+  }
+
   @Override
   public Long id() {
     return this.id;

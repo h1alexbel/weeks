@@ -1,6 +1,7 @@
 package com.h1alexbel.weeks.route;
 
 import com.h1alexbel.weeks.model.Weeks;
+import com.h1alexbel.weeks.postgres.PgWeek;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +19,27 @@ import reactor.core.publisher.Mono;
 public class WeekRoute {
 
   private final Weeks weeks;
+
+  @Bean
+  public RouterFunction<ServerResponse> create() {
+    return RouterFunctions.route()
+      .POST("/weeks", request ->
+        request.bodyToMono(RqWeek.class)
+          .flatMap(rq ->
+            Mono.from(
+              ServerResponse.ok().body(
+                this.weeks.create(
+                  new PgWeek(
+                    rq.getTitle(),
+                    rq.getMail()
+                  )
+                ),
+                Void.class
+              )
+            )
+          )
+      ).build();
+  }
 
   @Bean
   public RouterFunction<ServerResponse> week() {

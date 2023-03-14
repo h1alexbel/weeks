@@ -19,6 +19,20 @@ public class PgWeeks implements Weeks {
   private final DatabaseClient db;
 
   @Override
+  public Mono<Void> create(final Week week) {
+    return this.db.sql(
+        """
+          INSERT INTO week(title, mail, login) 
+          VALUES (:title, :mail, :login);
+          """
+      )
+      .bind("title", week.title())
+      .bind("mail", week.mail())
+      .bind("login", 1)
+      .then();
+  }
+
+  @Override
   public Mono<Week> mono(final Long id) {
     return this.db.sql(
         """

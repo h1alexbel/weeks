@@ -1,6 +1,5 @@
 package com.h1alexbel.weeks.postgres;
 
-import com.h1alexbel.weeks.model.User;
 import com.h1alexbel.weeks.model.Users;
 import lombok.RequiredArgsConstructor;
 import org.springframework.r2dbc.core.DatabaseClient;
@@ -18,7 +17,7 @@ public class PgUsers implements Users {
   private final DatabaseClient db;
 
   @Override
-  public Mono<User> mono(final Long id) {
+  public Mono<PgUser> mono(final Long id) {
     return this.db.sql("SELECT id, name FROM login WHERE id=:id")
       .bind("id", id)
       .fetch()
